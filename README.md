@@ -88,6 +88,9 @@ PostgresDB 10
 
 Please check SpringSchedulerConfig for the scheduler which runs every 10mins to update the status of RESOLVED tickets older than 30 days to CLOSED
 
+## DB Schema
+For database schema please refer data.sql file
+
 ## To compile
 ```
 gradle clean build -x test
