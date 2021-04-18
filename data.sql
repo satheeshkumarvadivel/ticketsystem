@@ -5,13 +5,6 @@ create table ticketuser (
 	email VARCHAR(120)
 );
 
-create table response (
-	id SERIAL PRIMARY KEY NOT NULL,
-	ticketid INT references ticket(id),
-	respondedby INT references ticketuser(id),
-	response VARCHAR(1000)
-);
-
 create table ticket (
 	id SERIAL PRIMARY KEY NOT NULL,
 	title VARCHAR(240) NOT NULL,
@@ -23,4 +16,11 @@ create table ticket (
 	customer INT references ticketuser(id),
 	status VARCHAR(60),
 	createdtime BIGSERIAL
+);
+
+create table response (
+	id SERIAL PRIMARY KEY NOT NULL,
+	ticketid INT references ticket(id),
+	respondedby INT references ticketuser(id),
+	response VARCHAR(1000)
 );

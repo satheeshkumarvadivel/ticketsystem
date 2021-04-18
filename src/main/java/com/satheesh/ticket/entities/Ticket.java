@@ -3,6 +3,7 @@ package com.satheesh.ticket.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -58,7 +59,7 @@ public class Ticket implements Serializable {
 	@JoinColumn(name = "customer", referencedColumnName = "id")
 	TicketUser customer;
 
-	@OneToMany(targetEntity = TicketResponse.class, mappedBy = "ticketid")
+	@OneToMany(targetEntity = TicketResponse.class, mappedBy = "ticketid", cascade = { CascadeType.REMOVE })
 	List<TicketResponse> responses;
 
 	@Enumerated(EnumType.STRING)

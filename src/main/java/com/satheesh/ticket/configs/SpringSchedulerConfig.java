@@ -23,7 +23,6 @@ public class SpringSchedulerConfig {
 	public void scheduleFixedRateTask() {
 		try {
 			Long timeBefore30days = (System.currentTimeMillis() / 1000) - (30 * 24 * 60 * 60);
-			System.out.println("Fixed rate task - " + timeBefore30days);
 			ticketRepo.updateResolvedTicketsToClosed(timeBefore30days);
 		} catch (Exception e) {
 			logger.error("Could not close old resolved tickets", e);

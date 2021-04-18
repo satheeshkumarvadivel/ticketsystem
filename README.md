@@ -19,7 +19,7 @@ PostgresDB 10
 	URL: /ticket/{id}
 	Method: GET
 	
-3. Create ticket
+3. Create ticket (User needs to be created first)
 	URL: /ticket
 	Method: POST
 	Body: {
@@ -41,7 +41,7 @@ PostgresDB 10
 	Note: 
 		1. If assignedTo is not provided, the ticket is auto assigned to agent with lowest ticket count. 
 
-4. Update ticket
+4. Update ticket (This is not a PATCH method. So the entire GET response needs to be sent in the PUT body)
 	URL: /ticket/{id}
 	Method: PUT
 	Body: {
